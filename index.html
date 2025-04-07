@@ -1,0 +1,285 @@
+<!-- CyberLife Android Purchase Page — Cyber UI Inspired -->
+<link rel="shortcut icon" href="https://th.bing.com/th/id/OIP.sXMnD8riotMqEl6Jtq30ZwHaHa?rs=1&pid=ImgDetMain" type="image/x-icon">
+<div class="t-canvas"
+    style="background: #f0f4f8; font-family: 'Segoe UI', sans-serif; color: #001f3f; overflow-x: hidden;">
+
+    <!-- Glowing Header -->
+    <div style="padding: 60px 40px; display: flex; align-items: center; justify-content: space-between;">
+        <h1
+            style="font-size: 2.8rem; font-weight: bold; letter-spacing: 2px; color: #00bcd4; text-shadow: 0 0 10px #00bcd4; animation: glow 1.5s ease-in-out infinite;">
+            CyberLife</h1>
+        <nav style="display: flex; gap: 40px;">
+            <a href="#models" class="link" style="animation: fadeInUp 0.5s ease-in-out;">Модели</a>
+            <a href="#customize" class="link" style="animation: fadeInUp 0.7s ease-in-out;">Кастомизация</a>
+            <a href="#order" class="link" style="animation: fadeInUp 0.9s ease-in-out;">Заказ</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section style="text-align: center; padding: 80px 20px; animation: fadeIn 2s ease;">
+        <h2 style="font-size: 2.5rem; color: #001f3f; animation: fadeInUp 1s ease;">Добро пожаловать в будущее</h2>
+        <p style="margin-top: 20px; color: #4a6fa5; animation: fadeInUp 1.2s ease;">Ваш персональный андроид. Готов
+            помочь. Готов жить. Доступен уже сейчас.</p>
+        <button class="btn-glow" style="margin-top: 40px;" onclick="scrollToSection('customize')">Выбрать
+            модель</button>
+    </section>
+
+    <!-- Models -->
+    <section id="models" style="padding: 100px 40px; animation: fadeInUp 1.5s ease-in-out;">
+        <h3 style="font-size: 2rem; color: #001f3f; margin-bottom: 40px; animation: fadeInUp 1.5s ease;">Доступные
+            модели</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+            <div class="card-glow" onclick="openModal('AX400')">
+                <img src="https://th.bing.com/th/id/OIP.Fhi25YC4GeYydm7oDnWAnwAAAA?pid=ImgDet&w=184&h=270&c=7&dpr=1.3"
+                    alt="AX400" style="width: 100%; border-radius: 10px;" />
+                <h4>AX400 — Домашний помощник</h4>
+                <p>Забота, чистота и внимание — идеальный выбор для семьи. Оснащён интуитивно понятным интерфейсом и
+                    возможностью адаптироваться к любым условиям семьи.</p>
+            </div>
+            <div class="card-glow" onclick="openModal('RK800')">
+                <img src="https://th.bing.com/th/id/OIP.vgECxg_HJ4XiHTI3M1j9kQAAAA?w=162&h=300&c=10&rs=1&qlt=99&bgcl=fffffe&r=0&o=6&dpr=1.3&pid=23.1"
+                    alt="RK800" style="width: 100%; border-radius: 10px;" />
+                <h4>RK800 — Следователь</h4>
+                <p>Самый интеллектуальный андроид. Расследования, безопасность, логика. Разработан для выполнения
+                    сложных расследований и выполнения различных задач в области правопорядка.</p>
+            </div>
+            <div class="card-glow" onclick="openModal('RK200')">
+                <img src="https://th.bing.com/th/id/OIP.xBTH1_R70Rl-BCiVp2CioAAAAA?w=170&h=300&c=10&rs=1&qlt=99&bgcl=fffffe&r=0&o=6&dpr=1.3&pid=23.1"
+                    alt="RK200" style="width: 100%; border-radius: 10px;" />
+                <h4>RK200 — Маркус</h4>
+                <p>Идеальный выбор для тех, кто ищет не просто помощника, а настоящего лидера. Модель RK200 оснащена
+                    уникальными функциями, которые помогут вам вдохновлять, управлять и вести людей. С индивидуальными
+                    настройками и возможностью адаптироваться к самым сложным задачам, этот андроид всегда будет на шаг
+                    впереди. Модернизирован для сложных ситуаций, он поднимет вашу производительность на новый уровень.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customize -->
+    <section id="customize" style="padding: 80px 40px; text-align: center; animation: fadeInUp 2s ease;">
+        <h3 style="font-size: 2rem;">Индивидуальная настройка</h3>
+        <p style="color: #4a6fa5; max-width: 600px; margin: 20px auto;">Внешность, голос, движения, акценты речи,
+            предустановленные навыки — ваш андроид будет уникален.</p>
+        <button class="btn-glow" onclick="toggleCustomizerPanel()">Настроить</button>
+
+        <!-- Hidden Customizer Panel -->
+        <div id="customizer-panel"
+            style="display: none; margin-top: 40px; background: white; color: #001f3f; border-radius: 16px; padding: 30px; max-width: 700px; margin-left: auto; margin-right: auto; box-shadow: 0 0 25px rgba(0, 188, 212, 0.3);">
+            <h4 style="font-size: 1.5rem; margin-bottom: 20px;">Настройка вашего андроида</h4>
+            <form style="display: grid; gap: 20px;">
+                <label>Цвет кожи: <select onchange="updateCustomizer()">
+                        <option>Светлый</option>
+                        <option>Смуглый</option>
+                        <option>Азиатский</option>
+                    </select></label>
+                <label>Пол: <select onchange="updateCustomizer()">
+                        <option>Мужской</option>
+                        <option>Женский</option>
+                        <option>Нейтральный</option>
+                    </select></label>
+                <label>Голосовой модуль: <select onchange="updateCustomizer()">
+                        <option>Нейтральный</option>
+                        <option>Дружелюбный</option>
+                        <option>Профессиональный</option>
+                    </select></label>
+                <label>Одежда: <select onchange="updateCustomizer()">
+                        <option>Форма CyberLife</option>
+                        <option>Повседневная</option>
+                        <option>Стиль "Полевой агент"</option>
+                    </select></label>
+                <label>Доп. навыки: <select onchange="updateCustomizer()">
+                        <option>Домашняя помощь</option>
+                        <option>Охрана</option>
+                        <option>IT-помощник</option>
+                    </select></label>
+                <button type="button" class="btn-glow">Сохранить настройки</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Order -->
+    <section id="order" style="padding: 100px 40px; text-align: center; animation: fadeInUp 2.5s ease;">
+        <h3 style="font-size: 2rem;">Готовы заказать?</h3>
+        <p style="color: #4a6fa5; max-width: 500px; margin: 20px auto;">Оставьте ваш email, и мы свяжемся с вами для
+            оформления заказа.</p>
+        <input type="email" placeholder="Email"
+            style="padding: 10px 20px; border: 1px solid #ccc; border-radius: 6px; width: 250px; animation: inputAnimation 1s ease-in-out;" />
+        <button class="btn-glow" style="margin-left: 10px;" onclick="showReview()">Отправить</button>
+        <p id="reviewMessage" style="color: #4a6fa5; margin-top: 20px;"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer
+        style="text-align: center; padding: 60px 20px; color: #7aa6c2; border-top: 1px solid #ccc; margin-top: 60px; animation: fadeInUp 3s ease;">
+        © 2038 CyberLife Inc. Все права защищены.
+    </footer>
+</div>
+
+<style>
+    .link {
+        text-decoration: none;
+        font-weight: 500;
+        color: #00bcd4;
+        position: relative;
+        transition: 0.3s;
+        transform: perspective(600px) rotateY(0deg);
+        animation: linkHover 1s ease-in-out;
+    }
+
+    .link::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background: #00bcd4;
+        left: 0;
+        bottom: -5px;
+        transform: scaleX(0);
+        transition: transform 0.3s;
+    }
+
+    .link:hover::after {
+        transform: scaleX(1);
+    }
+
+    .btn-glow {
+        padding: 12px 28px;
+        background-color: #00bcd4;
+        color: white;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+        box-shadow: 0 0 10px #00bcd4;
+        cursor: pointer;
+        transition: 0.3s ease;
+        transform: perspective(600px) rotateX(0deg);
+    }
+
+    .btn-glow:hover {
+        transform: scale(1.05) rotateX(10deg);
+        box-shadow: 0 0 20px #00e5ff;
+    }
+
+    .card-glow {
+        background: white;
+        padding: 20px;
+        border-radius: 16px;
+        box-shadow: 0 0 15px rgba(0, 188, 212, 0.3);
+        transition: transform 0.3s;
+        animation: fadeInUp 1.5s ease;
+    }
+
+    .card-glow:hover {
+        transform: translateY(-5px) rotateY(10deg);
+        box-shadow: 0 0 30px rgba(0, 188, 212, 0.5);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes inputAnimation {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes glow {
+        0% {
+            text-shadow: 0 0 5px #00bcd4, 0 0 10px #00bcd4;
+        }
+
+        50% {
+            text-shadow: 0 0 10px #00bcd4, 0 0 20px #00bcd4;
+        }
+
+        100% {
+            text-shadow: 0 0 5px #00bcd4, 0 0 10px #00bcd4;
+        }
+    }
+
+    @keyframes linkHover {
+        0% {
+            transform: perspective(600px) rotateY(0deg);
+        }
+
+        100% {
+            transform: perspective(600px) rotateY(10deg);
+        }
+    }
+</style>
+
+<script>
+    // Scroll function for smooth section transitions
+    function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Customizer panel toggle
+    function toggleCustomizerPanel() {
+        const panel = document.getElementById('customizer-panel');
+        panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    }
+
+    // Function to update the customizer settings dynamically
+    function updateCustomizer() {
+        const settings = document.querySelectorAll('#customizer-panel select');
+        const values = {};
+        settings.forEach(select => {
+            values[select.previousElementSibling.innerText] = select.value;
+        });
+        console.log(values); // You can update the UI or save the data as needed
+    }
+
+    // Function to open a modal for a model
+    function openModal(model) {
+        alert(`Подробнее о модели ${model}`);
+    }
+
+    // Simulating a random review
+    function showReview() {
+        const reviews = [
+            "Лучший андроид для семьи!",
+            "Отличная модель для расследований, просто незаменима!",
+            "Маркус — настоящая легенда! Лидер, который всегда в поисках справедливости."
+        ];
+        const randomReview = reviews[Math.floor(Math.random() * reviews.length)];
+        document.getElementById('reviewMessage').innerText = randomReview;
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            target.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+</script>
